@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+	<title>Radio Fm Paraiso 42</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" media="all" href="css/estilo.css" />
+</head>
+<body>
+<div id="contenedor">
+	<div id="encabezado">
+		<div id="logo">
+			<div><img src="img/logo.jpg" alt="Logo Fm Paraiso 42" /></div>
+			<div>
+				<h1>Fm Paraiso 42</h1>
+				<h2>fm95.5Mhz - El Hoyo - Chubut</h2>
+			</div>
+		</div>
+		<div id="menu" class="clearfix">
+			<ul class="clearfix">
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="noticias.html">Noticias</a></li>
+				<li><a href="programacion.html">Programacion</a></li>
+				<li><a href="contacto.html">Contacto</a></li>
+			</ul>
+			<ul class="clearfix">
+				<li><a href="www.facebook.com" ><img src="img/FaceBook_32x32.png" alt="Seguinos en Facebook" /></a></li>
+				<li><a href="www.twitter.com" ><img src="img/Twitter_32x32.png" alt="Seguinos en Twitter" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="clearfix">
+		<div class="sinLateral">
+			<div>
+				<div>
+				<div>
+					<table id="programacion">
+						<thead>
+							<tr>
+								<th>HS</th>
+								<th>Lunes</th>
+								<th>MARTES</th>
+								<th>Miercoles</th>
+								<th>JUEVES</th>
+								<th >Viernes</th>
+								<th>SABADO</th>
+								<th >Domingo</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="numero">06</td>
+								<td colspan="5" rowspan="3">Redaccion 20 (LU20 Radio Chubut)</td>
+								<td colspan="2" rowspan="3">Musica</td>
+							</tr>
+							<tr>
+								<td class="numero">07</td>
+							</tr>
+							<tr>
+								<td class="numero">08</td>
+							</tr>
+							<tr>
+								<td class="numero">09</td>
+								<td colspan="5">Nexo (LU20 Radio Chubut)</td>
+								<td rowspan="3">Del Mar a la Cordillera (LU20 Radio Chubut)</td>
+								<td rowspan="5">Musica</td>
+							</tr>
+							<tr>
+								<td class="numero">10</td>
+								<td colspan="5" rowspan="4">Una Nueva Mañana ( LOCAL )</td>
+							</tr>
+							<tr>
+								<td class="numero"> 11</td>
+							</tr>
+							<tr>
+								<td class="numero">12</td>
+								<td rowspan="2">Tus Pedidos En El Aire ( LOCAL )</td> 
+							</tr>
+							<tr>
+								<td class="numero">13</td>
+							</tr>
+							<tr>
+								<td class="numero">14</td>
+								<td colspan="5" rowspan="3">Subí Que Te Llevo (FM CORDOBA)</td>
+								<td rowspan="4">Anímate (FM CORDOBA)</td>
+								<td rowspan="4">Subí Que Te Llevo (FM CORDOBA)</td>
+							</tr>
+							<tr>
+								<td class="numero">15</td>
+							</tr>
+							<tr>
+								<td class="numero">16</td>
+							</tr>
+							<tr>
+								<td class="numero">17</td>
+								<td rowspan="3">Va de Tarde ( Local )</td>
+								<td rowspan="3">Musica</td>
+								<td rowspan="3">Va de Tarde ( Local )</td>
+								<td rowspan="3">Musica</td>
+								<td rowspan="3">Va de Tarde ( Local )</td>
+							</tr>
+							<tr>
+								<td class="numero">18</td>
+								<td >Sábado Manía ( Local)</td>
+								<td  rowspan="2">Musica</td>
+							</tr>
+							<tr>
+								<td class="numero">19</td>
+								<td >Lo Ped&iacute;s Lo Escuchas ( Local )</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="pie"><p><a href="contacto.html">Comunicarse con la radio</a></p><p>Diseñado por Sebastián Arca</p></div>
+</body>
+</html>

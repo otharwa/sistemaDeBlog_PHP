@@ -1,0 +1,106 @@
+/* - Reset - */
+* {margin:0; padding:0; border:0; vertical-align: middle;}
+ul {	list-style: none;}
+ol {list-style-type: decimal; list-style-position: inside; margin:5px 9px;}
+table {border-collapse: collapse;	border-spacing: 0; }
+p {font-size: 15px;}
+em { font-style: italic; }
+strong { font-weight: bold; color: #333; }
+small { font-size: 80%; }
+a {text-decoration: none; color:inherit;}
+a:hover, a:focus {text-decoration: underline; color: white;}	
+a:visited {text-decoration: none;}
+
+.clearfix:before, .clearfix:after{
+		content: "/0200";
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+.clearfix:after {clear: both;}
+	
+/* - General - */
+
+body {
+	color:black; 
+	font-family:Helvetica, Verdana, sans-serif;
+	background: #004773; /* Old browsers */
+	background: -moz-linear-gradient(top,  #004773 0%, #005083 45%, #000000 100%) fixed; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#004773), color-stop(45%,#005083), color-stop(100%,#000000)) fixed; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #004773 0%,#005083 45%,#000000 100%) fixed; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #004773 0%,#005083 45%,#000000 100%) fixed; /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #004773 0%,#005083 45%,#000000 100%) fixed; /* IE10+ */
+	background: linear-gradient(to bottom,  #004773 0%,#005083 45%,#000000 100%) fixed; /* W3C */
+}
+html,body,#contenedor{height: 100%;}
+body > #contenedor {height: auto; min-height: 100%;}
+#contenedor{width:940px; margin:auto; padding-bottom: 50px;}
+
+#encabezado{margin:10px 0; text-align:center;}
+	#encabezado a:hover, a:focus {text-decoration: none;}
+	#logo{
+		background-color:white;
+		padding:0 130px; 
+		border-radius:7px; 
+		-moz-box-shadow: 0px 0px 14px #000000; 
+		-webkit-box-shadow: 0px 0px 14px #000000;
+		box-shadow: 0px 0px 14px #000000;}
+	#logo div {display: inline-block;}
+	#logo div + div {margin-left: 20px;}
+	#logo img {width:76px; height:76px; padding:10px 0;}
+	#logo h1, p.up {text-transform: uppercase; font-size: 21px; font-weight: bold;}
+	#logo p , #logo h2 {font-size: 21px; font-weight: bold;}
+	
+	#menu{ position:relative; background-color:#89acc1; padding: 3px 0; margin-top:14px; border:solid 1px #D5DFE6; border-radius:7px; -moz-box-shadow: 0px 0px 14px #000000; -webkit-box-shadow: 0px 0px 14px #000000; box-shadow: 0px 0px 14px #000000;}
+	#menu ul {float: left;}
+	#menu ul+ul {float: right;}
+	#menu li {float: left; margin:4px 20px;}
+	#menu ul + ul li {margin:0 10px;} /* Redes Sociales */
+	
+.contenido{width:700px; float:left;}
+	.contenido > div{background-color: #89acc1; border-radius:7px; margin-bottom:30px; background-image: url("../img/stripe.png"); padding:10px;	}
+		.contenido > div > div {background-image:url("../img/stripeOpacity.png"); border-radius:7px; padding:7px;}	
+	
+	.contenido hr {border: solid grey; border-width: 1px 0 0; margin: 3px 0 8px 0; height: 0;}
+	.contenido a:hover {color: darkslateblue;}
+	.contenido p {margin:9px 0; text-indent: 15px;}
+	.contenido h2 {font-size: 21px;}
+	
+/*Ingresar*/
+#registro {position:relative;}
+#registro:hover span {color:white;}
+#registro:hover #reg_inv, #reg_inv:hover{display:block;}
+#reg_inv {display:none; z-index:1; position:absolute; left:-70px; padding:10px 70px 40px 70px;}
+
+#reg_inv > div {  background-color: rgba(0,0,0,0.5); border-radius:6px; box-shadow:0 0 5px #000; padding:10px;}
+#reg_inv form {background-color:#e1eaf0; padding:7px; border-radius:3px;}
+#reg_inv input {background-color:whitesmoke; border-radius:4px; padding:3px 5px; border: solid red 1px; margin:3px 0;}
+#reg_inv #readonly {border:none; text-align:center;}
+#reg_inv .lnkLogin {color:blue; font-size:12px; margin-left:7px;}
+#reg_inv .lnkLogin:hover {text-decoration:underline; color:black;}
+
+/*Crear Cuenta*/
+.usuarios {z-index:2; position:absolute; top:35px; left:110px; border:solid 1px #D5DFE6; background-color: rgba(0,0,0,0.7); border-radius:6px; box-shadow:0 0 10px #000; padding:30px;}
+.usuarios form {background-color:#e1eaf0; padding:7px; border-radius:3px; width: 400px;}
+.usuarios input {background-color:whitesmoke; border-radius:4px; padding:3px 5px; border: solid red 1px; margin:3px 5px;}
+
+/* - Lateral - */	
+
+#lateral {width:215px; float: right;}
+#lateral hr {border: dashed whitesmoke; border-width: 1px 0 0; margin-top: 3px; margin-bottom: 5px; height: 0; }
+#lateral, #lateral p {font-size: 13px;}
+#lateral > div {margin-top:20px; padding-bottom: 10px;  background-color:#afbfd5; text-align:left; border-radius:7px;}
+	
+	.lateralSec {background-color: #72829a; padding:7px 5px; border-radius:7px; margin-bottom: 15px;}
+	.lateralSec li {text-align: right;}
+	.lateralSec li a {text-align: left; display: block;}
+
+/* - Especifico - */	
+
+.contenido.articulo h1 {font-size: 21px;}
+.contenido.articulo h2 {font-size: 17px;}
+.contenido.articulo h3 {font-size: 16px;}	
+.imagen {text-align: center; margin:8px 0;}
+.imagen img {max-width: 620px;}
+
