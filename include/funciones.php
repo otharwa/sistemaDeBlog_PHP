@@ -16,7 +16,7 @@ function menu_secciones(){
 }
 
 function articulo(){
-	global $articulos;
+	//global $articulos;
 	global $imagenes;
 	global $ruta_imagenes;
 	global $secciones;
@@ -26,7 +26,32 @@ function articulo(){
 	$seccion = isset($_GET['secc']) ? $_GET['secc'] : 0;
 	$seccion = $secciones[$seccion];
 	
-	
+	$reseniaStrong = 1;
+	$resenia = 3;
+	$select = "SELECT 
+		articulos.id, 
+		articulos.titulo, 
+		CONCAT(SUBSTRING_INDEX(articulos.articulo,'.',$reseniaStrong ),' [...]') AS reseniaStrong,
+		CONCAT(SUBSTRING_INDEX(articulos.articulo,'.',$resenia ),' [...]') AS resenia,	
+		articulos.fecha_publicacion, 
+		articulos.tags, 
+		articulos.id_seccion, 
+		articulos.id_imagen, 
+		articulos.id_estado,
+		imagenes.archivo AS src, 
+		imagenes.titulo AS alt, 
+		secciones.seccion, 
+		secciones.id, 
+		imagenes.id
+	FROM articulos 
+		JOIN imagenes ON articulos.id_imagen=imagenes.id 
+		JOIN secciones ON articulos.id_seccion = secciones.id 
+	WHERE articulos.id_estado = 1
+	ORDER BY articulos.fecha_publicacion ASC ;";	
+
+	$query= mysqli_query($cnx,$select);
+	$articulos=mysqli_fetch_assoc($query);
+	var_dump($articulos);
 	//do{}while($art = mysqli_fetch_assoc($cnx,$articulos)){
 	//Tener quidado con la inyeccion SQL
 	foreach($articulos as $id => $valor){
@@ -166,12 +191,11 @@ function slider($cantidad=5){
 	$atras = 0; //$id==='0' ? $cantidad :  $id-1;
 	$adelante = 2; //$id>($cantidad-1) ? 0 : $id+1;
 	
-	$pocision = "SELECT id, id_estado, fecha_publicacion FROM articulos WHERE id_estado = 1 ORDER BY fecha_publicacion ASC";
+	$pocision = "SELECT id, id_estado, fecha_publicacion FROM articulos WHERE id_estado = 1 ORDER BY fecha_publicacion ASC;";
 	$query= mysqli_query($cnx,$pocision);
 	$queryRTA=mysqli_fetch_assoc($query);
-	
+
 	$id = $queryRTA['id'];
-	
 	$mostrar = "SELECT 
 	articulos.id, 
 	articulos.titulo, 
@@ -183,13 +207,15 @@ function slider($cantidad=5){
 	imagenes.id
 FROM articulos 
 	JOIN imagenes ON articulos.id_imagen=imagenes.id 
-WHERE articulos.id_estado = 1 AND articulos.id=$id";
+WHERE articulos.id_estado = '1' AND articulos.id = '$id'; ";
 
 //ORDER BY articulos.fecha_publicacion ASC LIMIT $pocision , $cantidad	
 
 	$query= mysqli_query($cnx,$mostrar);
 	$queryRTA=mysqli_fetch_assoc($query);
-	
+
+	var_dump($queryRTA);
+
 	echo '<div><a href="index.php?img='.$atras.'"><img src="img/atras.png" alt="atras"/></a></div>';
 	echo '<ul>';
 	echo '	<li><img src="'.$ruta_imagenes.$queryRTA['src'].'" alt="'.$queryRTA['alt'].'" />';

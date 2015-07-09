@@ -65,6 +65,7 @@ $imagenes[] = array(
 					'categoria'=>'noticias'
 				);
 /**************************************************************/
+$status[0] = 1;
 $articulos = array();
 $articulos[] = array(
 					'id'=>'0',

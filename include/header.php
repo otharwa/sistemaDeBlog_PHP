@@ -9,9 +9,8 @@
 			<ul class="clearfix">
 				<li><a href="index.php">Inicio</a></li>
 				<li><a href="noticias.php">Noticias</a></li>
-				<li><a href="galeria.php">Galeria</a></li>
 				<li><a href="contacto.php">Contacto</a></li>
-				<li><a href="acerca-de.php">Acerca De</a></li>
+				<li><a href="acerca_de.php">Acerca de</a></li>
 				<li id="registro">
 					<span>Ingresar <?php if(isset($_SESSION['login']))echo ' || '.$_SESSION['login']; ?></span>
 					<div id="reg_inv">
