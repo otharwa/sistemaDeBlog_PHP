@@ -20,6 +20,7 @@ function articulo(){
 	global $imagenes;
 	global $ruta_imagenes;
 	global $secciones;
+	global $cnx;
 	
 	$id = isset($_GET['id']) ? $_GET['id']: false;
 	$single = isset($_GET['id']) ? true : false;
@@ -31,8 +32,8 @@ function articulo(){
 	$select = "SELECT 
 		articulos.id, 
 		articulos.titulo, 
-		CONCAT(SUBSTRING_INDEX(articulos.articulo,'.',$reseniaStrong ),' [...]') AS reseniaStrong,
-		CONCAT(SUBSTRING_INDEX(articulos.articulo,'.',$resenia ),' [...]') AS resenia,	
+		CONCAT(SUBSTRING_INDEX(articulos.articulo,'.', $reseniaStrong ),' [...]') AS 'reseniaStrong',
+		CONCAT(SUBSTRING_INDEX(articulos.articulo,'.', $resenia ),' [...]') AS 'resenia',	
 		articulos.fecha_publicacion, 
 		articulos.tags, 
 		articulos.id_seccion, 
@@ -51,6 +52,7 @@ function articulo(){
 
 	$query= mysqli_query($cnx,$select);
 	$articulos=mysqli_fetch_assoc($query);
+	var_dump($articulos);
 	var_dump($articulos);
 	//do{}while($art = mysqli_fetch_assoc($cnx,$articulos)){
 	//Tener quidado con la inyeccion SQL

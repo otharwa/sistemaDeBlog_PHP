@@ -37,8 +37,7 @@
 					
 if(isset($_SESSION['error.log'])) $error= '<div><input id="readonly" type="text" readonly="on" value="'.$_SESSION['error.newlogin'].'"  /></div>';
 
-					echo <<<HTML
-					<div class="usuarios">
+					echo '<div class="usuarios">
 						<form action="include/registro.new.login.php" method="post">
 							<div><label for="usuario">Nombre de Usuario:</label><input type="text" name="usuario" /></div>
 							<div><label for="contrasenia">Contraseña:</label><input type="password" name="contrasenia" /></div>
@@ -52,8 +51,7 @@ if(isset($_SESSION['error.log'])) $error= '<div><input id="readonly" type="text"
 							<div><input type="reset" value="Limpiar" /><input type="submit" value="Crear Nueva Cuenta" /></div>
 							<div><a class="lnkLogin" href="include/registro.new.login.php?close">cerrar</a></div>
 						</form>
-					</div>
-HTML;
+					</div>';
 				}
 			if($_SESSION['editar']==true && isset($_SESSION['login'])){
 					
