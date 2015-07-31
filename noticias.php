@@ -43,6 +43,6 @@ include('include/funciones.php');
 		</div>
 	</div>
 </div>
-<div id="pie"><p><a href="contacto.html">Comunicarse con la radio</a></p><p>Diseñado por Sebastián Arca</p></div>
+<div id="pie"><p><a href="contacto.php">Comunicarse con la radio</a></p><p>Diseñado por Sebastián Arca</p></div>
 </body>
 </html>
