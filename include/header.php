@@ -12,15 +12,15 @@
 				<li><a href="contacto.php">Contacto</a></li>
 				<li><a href="acerca_de.php">Acerca de</a></li>
 				<li id="registro">
-					<span>Ingresar <?php if(isset($_SESSION['login']))echo ' || '.$_SESSION['login']; ?></span>
+					<span>Ingresar <?php if(!empty($_SESSION['login']))echo ' || '.$_SESSION['login']; ?></span>
 					<div id="reg_inv">
 						<div>
 						<form action="include/registro.login.php" method="post">
-							<div><input type="text" name="usuario" value="<?php if(isset($_SESSION['login']))echo $_SESSION['login'];else echo 'admin'; ?>" /></div>
+							<div><input type="text" name="usuario" value="<?php if(!empty($_SESSION['login']))echo $_SESSION['login'];else echo 'admin'; ?>" /></div>
 							<div><input type="password" name="contrasenia" value="1234" /></div>
 							<div><input type="submit" value="Ingresar" /><a class="lnkLogin" href="include/registro.login.php?kill" >cerrar</a></div>
-							<div><input id="readonly" type="text" readonly="on" value="<?php if(isset($_SESSION['error.log']))echo $_SESSION['error.log']; ?>"  /></div>
-							<?php if(!isset($_SESSION['login'])) echo '<div><a class="lnkLogin" href="include/registro.login.php?new">Crear Cuenta</a></div>';
+							<div><input id="readonly" type="text" readonly="on" value="<?php if(!empty($_SESSION['error.log']))echo $_SESSION['error.log']; ?>"  /></div>
+							<?php if(!!empty($_SESSION['login'])) echo '<div><a class="lnkLogin" href="include/registro.login.php?new">Crear Cuenta</a></div>';
 									else echo '<div><a class="lnkLogin" href="include/registro.edit.php?editar">Editar Cuenta</a></div>'; ?>
 						</form>
 						</div>
@@ -33,9 +33,9 @@
 			</ul>
 			
 			<?php
-				if($_SESSION['new']==true){
+				if( !empty($_SESSION['new']) ){
 					
-if(isset($_SESSION['error.log'])) $error= '<div><input id="readonly" type="text" readonly="on" value="'.$_SESSION['error.newlogin'].'"  /></div>';
+if(!empty($_SESSION['error.log'])) $error= '<div><input id="readonly" type="text" readonly="on" value="'.$_SESSION['error.newlogin'].'"  /></div>';
 
 					echo '<div class="usuarios">
 						<form action="include/registro.new.login.php" method="post">
@@ -53,13 +53,13 @@ if(isset($_SESSION['error.log'])) $error= '<div><input id="readonly" type="text"
 						</form>
 					</div>';
 				}
-			if($_SESSION['editar']==true && isset($_SESSION['login'])){
+			if(!empty($_SESSION['editar']) && !empty($_SESSION['login'])){
 					
 					$select = "SELECT * FROM usuarios WHERE usuario = '$_SESSION[login]' ;";
 					$selectRTA = mysqli_query($cnx,$select);
 					$selectRTA = mysqli_fetch_assoc($selectRTA);
 
-if(isset($_SESSION['error.editlogin'])) $error= '<div><input id="readonly" type="text" readonly="on" value="'.$_SESSION['error.editlogin'].'"  /></div>';
+if(!empty($_SESSION['error.editlogin'])) $error= '<div><input id="readonly" type="text" readonly="on" value="'.$_SESSION['error.editlogin'].'"  /></div>';
 
 					echo <<<HTML
 					<div class="usuarios">

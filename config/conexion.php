@@ -1,6 +1,8 @@
 <?php 
-ini_set('display_errors', 2 );
+error_reporting(0);
+//ini_set('display_errors', 2 );
 $cnx = mysqli_connect('localhost','root','Gandalf3791','sistemaBlogPHP');
+//$mysqli = new mysqli("localhost", "root", "Gandalf3791", "sistemaBlogPHP");
 session_start();
 
 
