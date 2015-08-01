@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 31-07-2015 a las 02:30:32
+-- Tiempo de generación: 01-08-2015 a las 05:57:18
 -- Versión del servidor: 5.5.37-0ubuntu0.13.10.1
 -- Versión de PHP: 5.5.3-1ubuntu2.6
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `articulos` (
   KEY `id_estado` (`id_estado`),
   KEY `id_imagen` (`id_imagen`),
   KEY `id_seccion` (`id_seccion`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `articulos`
@@ -49,7 +49,8 @@ INSERT INTO `articulos` (`id`, `titulo`, `fecha_publicacion`, `articulo`, `tags`
 (1, 'coso 1', '2015-07-09 15:22:25', 'asdfsadfasdf asdfsa df asdf asdf sadf sad fasdf sdaf sadf sdf sdaf sdaf asd f', 'asdf', 1, 1, 3),
 (2, 'Flor de jasmin', '2015-07-09 15:24:30', 'asdf f asdf asdf adsf s\r\nasdf f asdf asdf adsf s\r\nasdf f asdf asdf adsf s\r\nasdf f asdf asdf adsf sasdf f asdf asdf adsf sasdf f asdf asdf adsf sasdf f asdf asdf adsf s\r\nasdf f asdf asdf adsf s\r\nasdf f asdf asdf adsf sasdf f asdf asdf adsf sasdf f asdf asdf adsf s', 'sadf', 1, 2, 1),
 (3, 'asdfasdf', '2015-07-09 16:55:36', 'asdfasdfasd', '', 2, 1, 2),
-(4, 'pensando en futuro', '2015-07-30 21:43:11', 'conchaculoteta conchaculoteta conchaculoteta conchaculoteta conchaculoteta conchaculoteta\r\npornopornoporno pornoporno pornoporno pornoporno pornoporno pornoporno porno', '', 1, 8, 3);
+(4, 'pensando en futuro', '2015-07-30 21:43:11', 'conchaculoteta conchaculoteta conchaculoteta conchaculoteta conchaculoteta conchaculoteta\r\npornopornoporno pornoporno pornoporno pornoporno pornoporno pornoporno porno', '', 1, 8, 3),
+(5, 'Lorem ipsum dolor sit amet, consectetur', '2015-08-01 02:52:56', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.', 'ads, ygihj, locu', 1, 3, 1);
 
 -- --------------------------------------------------------
 

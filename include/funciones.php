@@ -88,8 +88,7 @@ function ultimo_articulo($reseniaStrong = 1, $resenia = 3){
 	global $cnx;
 	global $ruta_imagenes;
 	
-	$select = " 
-SELECT 
+	$select = "SELECT 
 	articulos.id, 
 	articulos.titulo, 
 	CONCAT(SUBSTRING_INDEX(articulos.articulo,'.',$reseniaStrong ),' [...]') AS reseniaStrong,
