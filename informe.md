@@ -34,6 +34,7 @@ Los niveles manejados son 2, administradores, quienes pueden editar, agregar, ar
 
 - Imagenes: todas las imagenes creadas en el sistema se indexan en esta tabla, las mismas tienen datos basicos como nombre de archivo (no url), titulo y descripcion.
 [muchas imagenes, tienen una categoria]
+[una imagen, tiene muchos articulos]
 
 - Categorias: cada imagen se puede asignar a una categoria para diferenciar usos, lugares donde ser mostradas, etc.
 [una categoria, tiene muchas imagenes]
