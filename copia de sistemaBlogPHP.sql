@@ -1,6 +1,31 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.6deb1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 01-08-2015 a las 05:57:18
+-- Versión del servidor: 5.5.37-0ubuntu0.13.10.1
+-- Versión de PHP: 5.5.3-1ubuntu2.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 --
 -- Base de datos: `sistemaBlogPHP`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `articulos`
+--
+
 CREATE TABLE IF NOT EXISTS `articulos` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `titulo` varchar(100) DEFAULT NULL,
@@ -16,6 +41,9 @@ CREATE TABLE IF NOT EXISTS `articulos` (
   KEY `id_seccion` (`id_seccion`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
+--
+-- Volcado de datos para la tabla `articulos`
+--
 
 INSERT INTO `articulos` (`id`, `titulo`, `fecha_publicacion`, `articulo`, `tags`, `id_estado`, `id_imagen`, `id_seccion`) VALUES
 (1, 'coso 1', '2015-07-09 15:22:25', 'asdfsadfasdf asdfsa df asdf asdf sadf sad fasdf sdaf sadf sdf sdaf sdaf asd f', 'asdf', 1, 1, 3),
@@ -26,23 +54,39 @@ INSERT INTO `articulos` (`id`, `titulo`, `fecha_publicacion`, `articulo`, `tags`
 
 -- --------------------------------------------------------
 
+--
+-- Estructura de tabla para la tabla `categorias`
+--
+
 CREATE TABLE IF NOT EXISTS `categorias` (
   `id` tinyint(1) unsigned NOT NULL AUTO_INCREMENT,
   `categoria` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `categoria` (`categoria`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
 
 INSERT INTO `categorias` (`id`, `categoria`) VALUES
 (1, 'noticias');
 
 -- --------------------------------------------------------
 
+--
+-- Estructura de tabla para la tabla `estados`
+--
+
 CREATE TABLE IF NOT EXISTS `estados` (
   `id` tinyint(1) unsigned NOT NULL AUTO_INCREMENT,
   `estado` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `estados`
+--
 
 INSERT INTO `estados` (`id`, `estado`) VALUES
 (1, 'Aprobado'),
@@ -50,6 +94,10 @@ INSERT INTO `estados` (`id`, `estado`) VALUES
 (3, 'Borrado');
 
 -- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagenes`
+--
 
 CREATE TABLE IF NOT EXISTS `imagenes` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -60,8 +108,11 @@ CREATE TABLE IF NOT EXISTS `imagenes` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `archivo` (`archivo`),
   KEY `id_categoria` (`id_categoria`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
+--
+-- Volcado de datos para la tabla `imagenes`
+--
 
 INSERT INTO `imagenes` (`id`, `archivo`, `titulo`, `descripcion`, `id_categoria`) VALUES
 (1, '1987299e5d8e648c6462fabb56dc528a.jpg', 'flor', 'flor flor', 1),
@@ -71,13 +122,21 @@ INSERT INTO `imagenes` (`id`, `archivo`, `titulo`, `descripcion`, `id_categoria`
 
 -- --------------------------------------------------------
 
+--
+-- Estructura de tabla para la tabla `musica`
+--
+
 CREATE TABLE IF NOT EXISTS `musica` (
   `id` tinyint(2) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(25) DEFAULT NULL,
   `artista` varchar(25) DEFAULT NULL,
   `votos` tinyint(2) unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Volcado de datos para la tabla `musica`
+--
 
 INSERT INTO `musica` (`id`, `nombre`, `artista`, `votos`) VALUES
 (1, 'Yellow Submarine', 'Beatles', 2),
@@ -91,12 +150,20 @@ INSERT INTO `musica` (`id`, `nombre`, `artista`, `votos`) VALUES
 
 -- --------------------------------------------------------
 
+--
+-- Estructura de tabla para la tabla `niveles`
+--
+
 CREATE TABLE IF NOT EXISTS `niveles` (
   `id` tinyint(1) unsigned NOT NULL AUTO_INCREMENT,
   `nivel` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nivel` (`nivel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `niveles`
+--
 
 INSERT INTO `niveles` (`id`, `nivel`) VALUES
 (1, 'admin'),
@@ -104,11 +171,19 @@ INSERT INTO `niveles` (`id`, `nivel`) VALUES
 
 -- --------------------------------------------------------
 
+--
+-- Estructura de tabla para la tabla `secciones`
+--
+
 CREATE TABLE IF NOT EXISTS `secciones` (
   `id` tinyint(1) unsigned NOT NULL AUTO_INCREMENT,
   `seccion` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Volcado de datos para la tabla `secciones`
+--
 
 INSERT INTO `secciones` (`id`, `seccion`) VALUES
 (1, 'Todo'),
@@ -118,6 +193,10 @@ INSERT INTO `secciones` (`id`, `seccion`) VALUES
 (5, 'Espectaculo');
 
 -- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
@@ -133,21 +212,40 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   UNIQUE KEY `usuario` (`usuario`),
   UNIQUE KEY `correo` (`correo`),
   KEY `id_nivel` (`id_nivel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
 
 INSERT INTO `usuarios` (`id`, `usuario`, `contrasenia`, `id_nivel`, `nombre`, `apellido`, `correo`, `domicilio`, `telefono`) VALUES
 (1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 1, '', '', '', '', ''),
 (2, 'user', '81dc9bdb52d04dc20036dbd8313ed055', 2, NULL, NULL, 'null@null.com.ar', NULL, NULL);
 
--- --------------------------------------------------------
+--
+-- Restricciones para tablas volcadas
+--
 
+--
+-- Filtros para la tabla `articulos`
+--
 ALTER TABLE `articulos`
   ADD CONSTRAINT `articulos_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `articulos_ibfk_2` FOREIGN KEY (`id_imagen`) REFERENCES `imagenes` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `articulos_ibfk_3` FOREIGN KEY (`id_seccion`) REFERENCES `secciones` (`id`) ON UPDATE CASCADE;
 
+--
+-- Filtros para la tabla `imagenes`
+--
 ALTER TABLE `imagenes`
   ADD CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`) ON UPDATE CASCADE;
 
+--
+-- Filtros para la tabla `usuarios`
+--
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_nivel`) REFERENCES `niveles` (`id`) ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
